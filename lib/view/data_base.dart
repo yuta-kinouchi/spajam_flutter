@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(const NextPage());
+  runApp(const DataBase());
 }
 
-class NextPage extends StatelessWidget {
-  const NextPage({super.key});
+class DataBase extends StatelessWidget {
+  const DataBase({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

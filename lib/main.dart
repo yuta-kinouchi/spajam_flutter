@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:spajam/view/next_page.dart';
+import 'package:spajam/view/api_connect.dart';
+import 'package:spajam/view/data_base.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,7 +8,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -41,11 +41,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Center(
           child: Column(children: [
             ElevatedButton(
-              child: const Text('API接続実装ページ'),
+              child: const Text('AIトークAPI接続'),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const NextPage()),
+                  MaterialPageRoute(builder: (context) => const ApiConnect()),
                 );
               },
             ),
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const NextPage()),
+                  MaterialPageRoute(builder: (context) => const DataBase()),
                 );
               },
             ),
