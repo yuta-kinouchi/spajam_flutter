@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-// void main() {
-//   runApp(const ApiConnect());
-// }
-
 class ApiConnect extends StatefulWidget {
   const ApiConnect({Key? key}) : super(key: key);
 
