@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:spajam/view/api_connect.dart';
-import 'package:spajam/view/data_base.dart';
+import 'package:spajam/view/ApiConnect.dart';
+import 'package:spajam/view/DataBaseView.dart';
 
 void main() {
   runApp(const MyApp());
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const DataBase()),
+                  MaterialPageRoute(builder: (context) => DataBaseView()),
                 );
               },
             ),
