@@ -3,6 +3,7 @@ import 'package:spajam/view/ApiConnect.dart';
 import 'package:spajam/view/ApiDataBaseView.dart';
 import 'package:spajam/view/ChatGPTView.dart';
 import 'package:spajam/view/DataBaseView.dart';
+import 'package:spajam/view/VectorSearchView.dart';
 
 void main() {
   runApp(const MyApp());
@@ -83,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ChatGPTView()),
+                  MaterialPageRoute(builder: (context) => VectorSearchView()),
                 );
               },
             ),
