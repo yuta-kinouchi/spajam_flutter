@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spajam/view/ApiConnect.dart';
+import 'package:spajam/view/ApiDataBaseView.dart';
+import 'package:spajam/view/ChatGPTView.dart';
 import 'package:spajam/view/DataBaseView.dart';
 
 void main() {
@@ -55,6 +57,33 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => DataBaseView()),
+                );
+              },
+            ),
+            ElevatedButton(
+              child: const Text('ログイン、APIデータベース連携'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ApiDataBaseView()),
+                );
+              },
+            ),
+            ElevatedButton(
+              child: const Text('chatGPT'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChatGPTView()),
+                );
+              },
+            ),
+            ElevatedButton(
+              child: const Text('ベクトルデータベース'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChatGPTView()),
                 );
               },
             ),
