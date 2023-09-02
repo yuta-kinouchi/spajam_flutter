@@ -3,9 +3,10 @@ import 'package:spajam/view/ApiConnect.dart';
 import 'package:spajam/view/ApiDataBaseView.dart';
 import 'package:spajam/view/ChatGPTView.dart';
 import 'package:spajam/view/DataBaseView.dart';
+import 'package:spajam/view/ImageUploadView.dart';
 import 'package:spajam/view/VectorSearchView.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 
@@ -85,6 +86,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => VectorSearchView()),
+                );
+              },
+            ),
+            ElevatedButton(
+              child: const Text('画像アップロード'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ImageUploadView()),
                 );
               },
             ),
