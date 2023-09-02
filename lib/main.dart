@@ -1,11 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:spajam/view/ApiConnect.dart';
 import 'package:spajam/view/ApiDataBaseView.dart';
 import 'package:spajam/view/ChatGPTView.dart';
 import 'package:spajam/view/DataBaseView.dart';
+import 'package:spajam/view/LoginView.dart';
 import 'package:spajam/view/VectorSearchView.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -34,6 +41,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  late LoginData login_data = LoginData(email: "",password: "") ;
+  // login_data.email =; "qq";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,10 +97,33 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
             ),
+            ElevatedButton(
+              child: const Text('ログイン/ユーザー登録'),
+              onPressed: () async {
+                final dataFromLoginPage = await Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginView(login_data))
+                ) as LoginData;
+                setState(() {
+                  login_data.email = dataFromLoginPage.email;
+                  login_data.password = dataFromLoginPage.password;
+                });
+              }
+              ),
+            Text(login_data.email),
+            // Text(login_data.password)
           ]),
         ),
       ),
       drawer: const Drawer(child: Center(child: Text("Drawer"))),
     );
   }
+}
+
+
+class LoginData {
+  String email;
+  String password;
+
+  LoginData({required this.email, required this.password});
 }
