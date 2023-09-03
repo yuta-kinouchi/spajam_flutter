@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spajam/view/ApiConnect.dart';
-import 'package:spajam/view/ApiDataBaseView.dart';
-import 'package:spajam/view/ChatGPTView.dart';
-import 'package:spajam/view/DataBaseView.dart';
-import 'package:spajam/view/ImageUploadView.dart';
 import 'package:spajam/view/QuestionView.dart';
-import 'package:spajam/view/VectorSearchView.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -46,61 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Center(
           child: Column(children: [
             ElevatedButton(
-              child: const Text('AIトークAPI接続'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ApiConnect()),
-                );
-              },
-            ),
-            ElevatedButton(
-              child: const Text('データベースCRUD実装ページ'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DataBaseView()),
-                );
-              },
-            ),
-            ElevatedButton(
-              child: const Text('ログイン、APIデータベース連携'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ApiDataBaseView()),
-                );
-              },
-            ),
-            ElevatedButton(
-              child: const Text('chatGPT'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ChatGPTView()),
-                );
-              },
-            ),
-            ElevatedButton(
-              child: const Text('ベクトルデータベース'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => VectorSearchView()),
-                );
-              },
-            ),
-            ElevatedButton(
-              child: const Text('画像アップロード'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ImageUploadView()),
-                );
-              },
-            ),
-            ElevatedButton(
-              child: const Text('spajam'),
+              child: const Text('タップでスタート'),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -111,7 +51,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ]),
         ),
       ),
-      drawer: const Drawer(child: Center(child: Text("Drawer"))),
     );
   }
 }
